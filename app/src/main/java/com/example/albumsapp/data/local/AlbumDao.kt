@@ -21,7 +21,7 @@ interface AlbumDao {
     fun loadAll(): Maybe<List<Album>>
 
     @Query("SELECT * FROM Album where id = :albumId")
-    fun loadOneByPhotoId(albumId: Long): Album?
+    fun getOneByAlbumId(albumId: Long): Album?
 
 
 
