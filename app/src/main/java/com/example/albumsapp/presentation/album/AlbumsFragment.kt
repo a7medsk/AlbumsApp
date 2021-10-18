@@ -38,8 +38,7 @@ class AlbumsFragment : Fragment(), OnAlbumAdapterListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = AlbumsAdapter(this)
-        val albumId = arguments?.let { it.getLong(KEY_ALBUM_ID) }
-        viewModel.getAlbums(albumId)
+
     }
 
     override fun onCreateView(
@@ -49,6 +48,8 @@ class AlbumsFragment : Fragment(), OnAlbumAdapterListener {
         fragmentAlbumsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_albums, container, false)
         fragmentAlbumsBinding.albumsViewModel = viewModel
         fragmentAlbumsBinding.photosRecyclerView.adapter = adapter
+
+        viewModel.getAlbums()
 
         viewModel.isLoad.observe(viewLifecycleOwner, Observer {
             it?.let { visibility ->
@@ -72,21 +73,6 @@ class AlbumsFragment : Fragment(), OnAlbumAdapterListener {
     }
 
 
-    companion object {
-
-        val KEY_ALBUM_ID = "KEY_ALBUM_ID"
-        val FRAGMENT_NAME = AlbumsFragment::class.java.name
-
-
-        @JvmStatic
-        fun newInstance() =
-            AlbumsFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
-
-
-    }
 
     override fun gotoDetailPage(imageView: ImageView, id: Long) {
         mCallback?.gotoDetailPageByAlbumId(imageView, id)

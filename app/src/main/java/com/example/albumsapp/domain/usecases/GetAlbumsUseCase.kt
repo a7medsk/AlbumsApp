@@ -12,11 +12,6 @@ import javax.inject.Inject
  */
 class GetAlbumsUseCase @Inject constructor(private val repository: AlbumRepository) : ObservableUseCase<List<Album>>() {
 
-    private var albumId: Long? = null
-
-    fun saveAlbumId(id: Long) {
-        albumId = id
-    }
 
 
     override fun buildUseCaseObservable(): Observable<List<Album>> {

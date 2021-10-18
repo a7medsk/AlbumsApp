@@ -15,22 +15,14 @@ class MainActivity : AppCompatActivity(),OnGalleryCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
-            navigateToAlbumPage()
-        }
 
-
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
     override fun navigateToAlbumPage() {
-        supportFragmentManager.beginTransaction()
-            .replace(
-                R.id.gallery_container,
-                AlbumsFragment.newInstance(),
-                AlbumsFragment.FRAGMENT_NAME
-            )
-            .addToBackStack(AlbumsFragment.FRAGMENT_NAME)
-            .commitAllowingStateLoss()
+        TODO("Not yet implemented")
     }
 
     override fun gotoDetailPageByAlbumId(imageView: ImageView, id: Long) {

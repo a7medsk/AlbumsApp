@@ -22,9 +22,8 @@ class AlbumsViewModel @Inject constructor(private val getAlbumsUseCase: GetAlbum
     }
 
 
-    fun getAlbums(id: Long?) {
-        if (id == null) return
-        getAlbumsUseCase.saveAlbumId(id)
+    fun getAlbums() {
+
         getAlbumsUseCase.execute(
             onSuccess = {
                 isLoad.value = true
