@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/albumFragment"
         android:name="com.example.albumsapp.presentation.album.AlbumsFragment"
-        android:label="album_fragment"
+        android:label="albums"
         tools:layout="@layout/fragment_albums" />
 </navigation>
