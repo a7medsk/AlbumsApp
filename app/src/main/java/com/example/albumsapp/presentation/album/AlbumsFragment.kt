@@ -74,7 +74,7 @@ class AlbumsFragment : Fragment(), OnAlbumAdapterListener {
 
 
 
-    override fun gotoDetailPage(imageView: ImageView, id: Long) {
+    override fun gotoDetailPage(imageView: ImageView, id: Int) {
         mCallback?.gotoDetailPageByAlbumId(imageView, id)
     }
 

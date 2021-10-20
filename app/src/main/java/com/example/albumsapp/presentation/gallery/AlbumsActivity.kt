@@ -26,15 +26,13 @@ class AlbumsActivity : AppCompatActivity(),OnGalleryCallback {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
-    override fun navigateToAlbumPage() {
-        TODO("Not yet implemented")
-    }
 
-    override fun gotoDetailPageByAlbumId(imageView: ImageView, id: Long) {
+
+    override fun gotoDetailPageByAlbumId(imageView: ImageView, id: Int) {
 
         val intent = Intent(this, AlbumDetailActivity::class.java)
         val bundle = Bundle().apply {
-            putLong(KEY_PHOTO_ID, id)
+            putInt(KEY_PHOTO_ID, id)
         }
         intent.putExtras(bundle)
         val options = ActivityOptionsCompat.makeSceneTransitionAnimation(

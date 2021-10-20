@@ -23,7 +23,7 @@ class AlbumDetailViewModel@Inject constructor(private val getAlbumDetailUseCase:
 
 
 
-    fun getDetailFromDb(id: Long?){
+    fun getDetailFromDb(id: Int?){
         if (id == null) return
         getAlbumDetailUseCase.saveAlbumId(id)
         albumData.value = getAlbumDetailUseCase.getAlbumFromDb(id)

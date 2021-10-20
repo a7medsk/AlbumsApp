@@ -10,13 +10,13 @@ import javax.inject.Inject
  */
 class GetAlbumDetailUseCase @Inject constructor(private val repository: AlbumRepository)  {
 
-    private var albumId: Long? = null
+    private var albumId: Int? = null
 
-    fun saveAlbumId(id: Long) {
+    fun saveAlbumId(id: Int) {
         albumId = id
     }
 
-    fun getAlbumFromDb(albumId: Long): Album? {
+    fun getAlbumFromDb(albumId: Int): Album? {
 
         return repository.getAlbumDetailFromDb(albumId)
     }

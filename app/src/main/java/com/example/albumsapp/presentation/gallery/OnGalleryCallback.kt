@@ -8,7 +8,5 @@ import android.widget.ImageView
  */
 interface OnGalleryCallback {
 
-    fun navigateToAlbumPage()
-
-    fun gotoDetailPageByAlbumId(imageView: ImageView, id: Long)
+    fun gotoDetailPageByAlbumId(imageView: ImageView, id: Int)
 }

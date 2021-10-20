@@ -8,6 +8,6 @@ import android.widget.ImageView
  */
 interface OnAlbumAdapterListener{
 
-    fun gotoDetailPage(imageView: ImageView, id: Long)
+    fun gotoDetailPage(imageView: ImageView, id: Int)
 
 }

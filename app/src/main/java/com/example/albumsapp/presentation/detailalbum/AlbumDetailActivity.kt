@@ -26,9 +26,9 @@ class AlbumDetailActivity :AppCompatActivity(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         activityAlbumDetailBinding.albumDetailViewModel = viewModel
 
-        val photoId = intent?.extras?.getLong(KEY_PHOTO_ID) ?: return
+        val photoId = intent?.extras?.getInt(KEY_PHOTO_ID) ?: return
         viewModel.getDetailFromDb(photoId)
-        // viewModel.checkFavoriteStatus(photoId)
+
 
         viewModel.albumData.observe(this, Observer {
             activityAlbumDetailBinding.detailTitleTextView.text = it?.title

@@ -13,7 +13,7 @@ interface AlbumRepository {
 
     fun getAlbums(): Observable<List<Album>>
 
-    fun getAlbumDetailFromDb(albumId: Long?): Album?
+    fun getAlbumDetailFromDb(albumId: Int?): Album?
 
     fun addAlbums(albums: List<Album>)
 }

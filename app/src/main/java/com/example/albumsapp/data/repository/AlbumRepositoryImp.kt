@@ -26,7 +26,7 @@ class AlbumRepositoryImp(
         database.albumDao.insertAll(*albums.toTypedArray())
     }
 
-    override fun getAlbumDetailFromDb(albumId: Long?): Album? {
+    override fun getAlbumDetailFromDb(albumId: Int?): Album? {
 
         return database.albumDao.getOneByAlbumId(albumId!!)
     }

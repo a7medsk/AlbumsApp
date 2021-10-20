@@ -10,7 +10,7 @@ import com.example.albumsapp.domain.model.Album
  */
 class AlbumViewModel(val album: Album) : ViewModel() {
 
-    private val TAG = AlbumViewModel::class.java.name
+
     val albumData = MutableLiveData<Album>()
 
     init {

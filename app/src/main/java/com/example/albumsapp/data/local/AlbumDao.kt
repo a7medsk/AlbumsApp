@@ -15,13 +15,16 @@ import io.reactivex.Maybe
 interface AlbumDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert( album: Album)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg albums: Album)
 
     @Query("SELECT * FROM Album")
     fun loadAll(): Maybe<List<Album>>
 
     @Query("SELECT * FROM Album where id = :albumId")
-    fun getOneByAlbumId(albumId: Long): Album?
+    fun getOneByAlbumId(albumId: Int): Album?
 
 
 
